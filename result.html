@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scan Result - Security Report</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">Secure Scanner</div>
+        <div class="user-info">
+            Welcome, <span id="username-display">User</span>!
+            <button id="logout-button" class="btn-logout">Logout</button>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <h1 class="page-title">Security Analysis Report 🔍</h1>
+        
+        <div id="result-container" class="result-box">
+            
+            <div id="scan-result-display">
+                <p>Loading security analysis...</p>
+            </div>
+            
+            <hr style="margin: 20px 0;">
+
+            <button id="scan-again-button" class="btn-primary">Scan Another Code</button>
+        </div>
+    </div>
+    
+    <script src="result.js"></script>
+</body>
+</html>

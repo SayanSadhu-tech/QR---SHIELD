@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Scanner</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <div id="container">
+        <div class="header">
+            <h2>Welcome, <span id="username-display"></span>!</h2>
+            <button id="logout-button">Logout</button>
+        </div>
+        
+        <h1>QR Code Scanner 📸</h1>
+        <div id="qr-reader"></div>
+        <div id="controls">
+            <label for="file-selector" class="button">
+                Upload QR Code
+                <input type="file" id="file-selector" accept="image/*" hidden>
+            </label>
+            <button id="flash-toggle" disabled>Toggle Flash</button>
+        </div>
+        
+    </div>
+
+    <script src="https://unpkg.com/html5-qrcode/html5-qrcode.min.js"></script>
+    <script src="script.js"></script> 
+</body>
+</html>
