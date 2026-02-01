@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Secure Scanner</title><link rel="stylesheet" href="style.css"></head>
+<body>
+    <div class="main-content">
+        <div class="scanner-box">
+            <div style="display:flex; justify-content:space-between; margin-bottom:15px; font-size:0.9rem;">
+                <span>Hi, <strong id="u-name"></strong></span>
+                <span onclick="location.href='index.html'" style="color:var(--danger); cursor:pointer;">Logout</span>
+            </div>
+            <div id="qr-reader" style="border:none !important;"></div>
+            <div style="display:flex; gap:10px; margin-top:15px;">
+                <button id="flash-toggle" class="secondary-btn">🔦 Flash</button>
+                <label style="flex:1; background:var(--primary); color:white; border-radius:12px; display:flex; align-items:center; justify-content:center; cursor:pointer; font-weight:600;">
+                    📂 Upload QR <input type="file" id="file-input" accept="image/*" hidden>
+                </label>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/html5-qrcode"></script>
+    <script src="script.js"></script>
+</body>
+</html>

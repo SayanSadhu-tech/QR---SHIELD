@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>User Login</title><link rel="stylesheet" href="style.css"></head>
+<body>
+    <div class="main-content">
+        <div class="auth-box">
+            <h1>User Login</h1>
+            <input type="text" id="login-user" placeholder="Username or Email">
+            <input type="password" placeholder="Password">
+            <button id="login-btn">Login</button>
+            <div style="margin-top: 20px; font-size: 0.9rem;">
+                <a href="register.html" style="color:var(--primary); text-decoration:none;">Need to Register?</a><br>
+                <a href="forgot.html" style="color:var(--primary); text-decoration:none; margin-top:5px; display:inline-block;">Forgot Password?</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('login-btn').onclick = () => {
+            const user = document.getElementById('login-user').value;
+            if(user) {
+                localStorage.setItem('loggedInUser', user);
+                window.location.href = 'scanner.html';
+            }
+        };
+    </script>
+</body>
+</html>

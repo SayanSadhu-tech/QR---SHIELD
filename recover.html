@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Recovery - QR Scanner</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+    <div class="theme-menu-container">
+        <button id="menu-toggle" class="kebab-menu-button">&#x22EE;</button>
+        <div id="theme-controls-dropdown" class="theme-controls-dropdown">
+            <button id="theme-toggle" class="menu-item">🌙 Dark Mode</button>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <h1 class="page-title">Password Recovery</h1>
+        <div class="auth-box">
+            <p id="recovery-prompt" style="text-align: center; margin-bottom: 25px;">
+                Enter your registered username and email to verify your identity.
+            </p>
+
+            <form id="recovery-form">
+                <div id="step-identity">
+                    <div class="form-group">
+                        <label for="rec-username">Username</label>
+                        <input type="text" id="rec-username" name="rec-username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="rec-email">Email Address</label>
+                        <input type="email" id="rec-email" name="rec-email" required>
+                    </div>
+                    <button type="submit" class="btn-auth">Verify Identity</button>
+                </div>
+                
+                <div id="step-otp" style="display: none;">
+                    <p style="text-align: center; color: var(--primary-color); margin-bottom: 15px;">
+                        A recovery code has been "sent". Enter it below to proceed.
+                    </p>
+                    <div class="form-group">
+                        <label for="rec-otp">Recovery Code (6 Digits)</label>
+                        <input type="text" id="rec-otp" name="rec-otp" required maxlength="6" pattern="\d{6}">
+                    </div>
+                    <button type="submit" class="btn-auth">Verify Code</button>
+                </div>
+
+                <div id="step-password" style="display: none;">
+                    <p style="text-align: center; color: var(--primary-color); margin-bottom: 15px;">
+                        Set a new password for your account.
+                    </p>
+                    <div class="form-group">
+                        <label for="new-password">New Password</label>
+                        <input type="password" id="new-password" name="new-password" required minlength="6">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-new-password">Confirm New Password</label>
+                        <input type="password" id="confirm-new-password" name="confirm-new-password" required minlength="6">
+                    </div>
+                    <button type="submit" class="btn-auth">Reset Password</button>
+                </div>
+            </form>
+            
+            <p id="recovery-error" style="color: var(--danger-border); text-align: center; margin-top: 10px;"></p>
+            
+            <p style="text-align: center; margin-top: 20px;">
+                <a href="index.html" style="color: var(--secondary-color);">Back to Login</a>
+            </p>
+        </div>
+    </main>
+
+    <script src="recover.js"></script> 
+</body>
+</html>

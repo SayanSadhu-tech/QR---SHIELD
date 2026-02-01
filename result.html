@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><link rel="stylesheet" href="style.css"></head>
+<body>
+    <div class="main-content">
+        <h1>Analysis Report</h1>
+        <div class="result-box">
+            <h2 id="score-val" style="font-size:3rem; margin-bottom:0;"></h2>
+            <p style="font-weight:bold; margin-bottom:20px;">Stealth Security Score</p>
+            
+            <div style="text-align:left; background:rgba(0,0,0,0.04); padding:20px; border-radius:15px;">
+                <p><strong>🏦 Detected:</strong> <span id="res-bank"></span></p>
+                <p style="margin-top:10px;"><strong>📄 Data:</strong> <span id="res-data" style="word-break:break-all; font-size:0.8rem; opacity:0.8;"></span></p>
+                <hr style="margin:15px 0; border:0.5px solid #ddd;">
+                <p><strong>🛡️ Security Logs:</strong></p>
+                <ul id="res-logs" style="font-size:0.85rem; margin-top:5px; padding-left:20px;"></ul>
+            </div>
+            
+            <button onclick="location.href='scanner.html'">Scan Another</button>
+        </div>
+    </div>
+    <script>
+        const r = JSON.parse(sessionStorage.getItem('scanResult'));
+        if(r) {
+            const scoreEl = document.getElementById('score-val');
+            scoreEl.textContent = r.stealth + "%";
+            scoreEl.style.color = r.stealth > 70 ? "#2ecc71" : "#e74c3c";
+            document.getElementById('res-bank').textContent = r.bank;
+            document.getElementById('res-data').textContent = r.data;
+            const logBox = document.getElementById('res-logs');
+            r.logs.length ? r.logs.forEach(l => logBox.innerHTML += `<li>${l}</li>`) : logBox.innerHTML = "<li>No threats detected.</li>";
+        }
+    </script>
+</body>
+</html>
